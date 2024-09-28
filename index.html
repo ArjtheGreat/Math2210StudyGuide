@@ -13,10 +13,11 @@
         <h3 style="color: white"> by Arjun Maitra </h3>
         <nav>
             <ul>
-                <li><a href="#systems">Systems of Linear Equations</a></li>
+                <li><a href="#systems">Systems of Equations</a></li>
                 <li><a href="#matrix-operations">Matrix Operations</a></li>
-                <li><a href="#matrix-inverses">Matrix Inverses</a></li>
+                <li><a href="#matrix-inverses">Inverses</a></li>
                 <li><a href="#linear-transformations">Linear Transformations</a></li>
+                <li><a href="#matrix-determinants">Determinants</a></li>
                 <li><a href="#matrix-properties">Matrix Properties and Theorems</a></li>
             </ul>
         </nav>
@@ -103,89 +104,252 @@
     <!-- Linear Transformations Section -->
     <section id="linear-transformations">
         <h2>Linear Transformations</h2>
-
+    
         <h3>4.1 Definition of Linear Transformations</h3>
         <p>A transformation T: R<sup>n</sup> → R<sup>m</sup> is linear if:</p>
         <ul>
             <li>T(u + v) = T(u) + T(v)</li>
             <li>T(cu) = cT(u)</li>
         </ul>
-
+    
         <h3>4.2 Common Transformation Matrices in R<sup>2</sup></h3>
-        <p>Here are some common transformation matrices for R<sup>2</sup>:</p>
-
+        <p>Here are some common transformation matrices for R<sup>2</sup> and what they represent:</p>
+    
         <ul>
             <li><strong>Rotation by an angle θ:</strong>
+            <p>This matrix rotates a point (or vector) counterclockwise by an angle θ around the origin.</p>
             <pre>
-            <mtable>
+            <table>
             <tr><td> cosθ </td><td> -sinθ </td></tr>
             <tr><td> sinθ </td><td> cosθ </td></tr>
-            </mtable>
-            </pre></li>
-
+            </table>
+            </pre>
+            <p>Geometrically, each point (x, y) is rotated by θ degrees around the origin, changing its coordinates accordingly.</p>
+            </li>
+    
             <li><strong>Reflection across the x-axis:</strong>
+            <p>This transformation reflects a point across the x-axis, flipping the y-coordinate.</p>
             <pre>
-            <mtable>
+            <table>
             <tr><td> 1 </td><td> 0 </td></tr>
             <tr><td> 0 </td><td> -1 </td></tr>
-            </mtable>
-            </pre></li>
-
+            </table>
+            </pre>
+            <p>If you reflect a point (x, y) across the x-axis, it becomes (x, -y).</p>
+            </li>
+    
             <li><strong>Reflection across the y-axis:</strong>
+            <p>This transformation reflects a point across the y-axis, flipping the x-coordinate.</p>
             <pre>
-            <mtable>
+            <table>
             <tr><td> -1 </td><td> 0 </td></tr>
             <tr><td> 0 </td><td> 1 </td></tr>
-            </mtable>
-            </pre></li>
-
+            </table>
+            </pre>
+            <p>Reflecting a point (x, y) across the y-axis results in (-x, y).</p>
+            </li>
+    
             <li><strong>Reflection across the line y=x:</strong>
+            <p>This transformation reflects a point across the line y = x, swapping the x- and y-coordinates.</p>
             <pre>
-            <mtable>
+            <table>
             <tr><td> 0 </td><td> 1 </td></tr>
             <tr><td> 1 </td><td> 0 </td></tr>
-            </mtable>
-            </pre></li>
-
+            </table>
+            </pre>
+            <p>A point (x, y) becomes (y, x) after reflection across the line y = x.</p>
+            </li>
+    
             <li><strong>Horizontal Stretch:</strong> (scaling x by factor k)
+            <p>This matrix stretches or compresses points horizontally by scaling the x-coordinate by a factor k while leaving the y-coordinate unchanged.</p>
             <pre>
-            <mtable>
+            <table>
             <tr><td> k </td><td> 0 </td></tr>
             <tr><td> 0 </td><td> 1 </td></tr>
-            </mtable>
-            </pre></li>
-
+            </table>
+            </pre>
+            <p>A point (x, y) becomes (kx, y), stretching or compressing along the x-axis.</p>
+            </li>
+    
             <li><strong>Vertical Stretch:</strong> (scaling y by factor k)
+            <p>This matrix stretches or compresses points vertically by scaling the y-coordinate by a factor k while leaving the x-coordinate unchanged.</p>
             <pre>
-            <mtable>
+            <table>
             <tr><td> 1 </td><td> 0 </td></tr>
             <tr><td> 0 </td><td> k </td></tr>
-            </mtable>
-            </pre></li>
-
+            </table>
+            </pre>
+            <p>A point (x, y) becomes (x, ky), stretching or compressing along the y-axis.</p>
+            </li>
+    
             <li><strong>Shearing (horizontal):</strong>
+            <p>This transformation "shears" points horizontally by shifting the x-coordinate proportionally to the y-coordinate while keeping the y-coordinate the same.</p>
             <pre>
-            <mtable>
+            <table>
             <tr><td> 1 </td><td> k </td></tr>
             <tr><td> 0 </td><td> 1 </td></tr>
-            </mtable>
-            </pre></li>
-
+            </table>
+            </pre>
+            <p>A point (x, y) becomes (x + ky, y), slanting it horizontally.</p>
+            </li>
+    
             <li><strong>Shearing (vertical):</strong>
+            <p>This transformation "shears" points vertically by shifting the y-coordinate proportionally to the x-coordinate while keeping the x-coordinate the same.</p>
             <pre>
-            <mtable>
+            <table>
             <tr><td> 1 </td><td> 0 </td></tr>
             <tr><td> k </td><td> 1 </td></tr>
-            </mtable>
-            </pre></li>
+            </table>
+            </pre>
+            <p>A point (x, y) becomes (x, y + kx), slanting it vertically.</p>
+            </li>
+        </ul>
+    
+        <h3>4.3 Composition of Matrix Transformations</h3>
+        <p>Matrix transformations can be composed by matrix multiplication. For example, applying two transformations T<sub>1</sub> and T<sub>2</sub> in sequence to a vector v is expressed as:</p>
+        <pre>T₁(T₂(v)) = (T₁T₂)(v)</pre>
+        <p>However, it is important to note that **matrix multiplication is not commutative**, meaning the order of multiplication matters. When you compose two transformations, the order in which they are applied reverses the order of multiplication.</p>
+        <p>In other words, to apply T<sub>2</sub> first and then T<sub>1</sub>, you multiply the matrices in the reverse order:</p>
+        <pre>(T₁T₂)(v) = T₁(T₂(v))</pre>
+        <p>Here, T<sub>2</sub> acts first on v, and then T<sub>1</sub> acts on the result of T<sub>2</sub>(v).</p>
+    </section>
+    
+
+    <!-- Matrix Determinants Section -->
+    <section id="matrix-determinants">
+        <h2>Matrix Determinants</h2>
+
+        <h3>3.1 Definition of a Matrix Determinant</h3>
+        <p>The determinant of a square matrix is a scalar value that can be computed from the elements of the matrix and encodes certain properties of the matrix. The determinant helps determine whether a matrix is invertible, its volume-scaling factor in transformations, and other characteristics.</p>
+        <p>The determinant of matrix A is written as det(A) or |A|.</p>
+
+        <h3>3.2 Determinants of 2x2 and 3x3 Matrices</h3>
+        
+        <ul>
+            <li><strong>Determinant of a 2x2 matrix:</strong></li>
+            <p>For a 2x2 matrix:
+            <pre>
+            A = 
+            <table>
+                <tr><td>a</td><td>b</td></tr>
+                <tr><td>c</td><td>d</td></tr>
+            </table>
+            </pre>
+            The determinant is calculated as:
+            <pre>
+            det(A) = ad - bc
+            </pre>
+            </p>
         </ul>
 
-        <h3>4.3 Composition of Matrix Transformations</h3>
-        <p>Matrix transformations can be composed by matrix multiplication:</p>
-        <pre>T₁(T₂(v)) = (T₁T₂)(v)</pre>
+        <h3>3.3 Cofactor Method for Determinants</h3>
+        <p>The cofactor method (or cofactor expansion) is used to calculate the determinant of larger matrices (3x3 or higher). Here's how it works for a 3x3 matrix:</p>
+        <pre>
+        A = 
+        <table>
+            <tr><td>a</td><td>b</td><td>c</td></tr>
+            <tr><td>d</td><td>e</td><td>f</td></tr>
+            <tr><td>g</td><td>h</td><td>i</td></tr>
+        </table>
+        </pre>
 
-        <p>This is equivalent to matrix multiplication of the transformation matrices.</p>
+        <p>To compute the determinant of A, you expand along any row or column. Let's expand along the first row:</p>
+
+        <p>det(A) = a * C<sub>11</sub> - b * C<sub>12</sub> + c * C<sub>13</sub></p>
+        
+        <p>Where C<sub>ij</sub> represents the cofactor of element a<sub>ij</sub>:</p>
+        <ul>
+            <li><strong>Cofactor C<sub>11</sub>:</strong> Determinant of the 2x2 matrix formed by deleting the first row and first column of A:</li>
+            <pre>
+            C<sub>11</sub> = det
+            <table>
+                <tr><td>e</td><td>f</td></tr>
+                <tr><td>h</td><td>i</td></tr>
+            </table>
+            C<sub>11</sub> = ei - fh
+            </pre>
+
+            <li><strong>Cofactor C<sub>12</sub>:</strong> Determinant of the 2x2 matrix formed by deleting the first row and second column of A:</li>
+            <pre>
+            C<sub>12</sub> = det
+            <table>
+                <tr><td>d</td><td>f</td></tr>
+                <tr><td>g</td><td>i</td></tr>
+            </table>
+            C<sub>12</sub> = di - fg
+            </pre>
+
+            <li><strong>Cofactor C<sub>13</sub>:</strong> Determinant of the 2x2 matrix formed by deleting the first row and third column of A:</li>
+            <pre>
+            C<sub>13</sub> = det
+            <table>
+                <tr><td>d</td><td>e</td></tr>
+                <tr><td>g</td><td>h</td></tr>
+            </table>
+            C<sub>13</sub> = dh - eg
+            </pre>
+        </ul>
+
+        <p>So the determinant of A is:</p>
+        <pre>
+        det(A) = a(ei - fh) - b(di - fg) + c(dh - eg)
+        </pre>
+        <p>This is the cofactor expansion method. You can expand along any row or column, but the result will be the same.</p>
+
+        <h3>3.4 Determinants of Upper and Lower Triangular Matrices</h3>
+        <p>A matrix is upper triangular if all the elements below the main diagonal are zero, and lower triangular if all the elements above the main diagonal are zero.</p>
+
+        <ul>
+            <li><strong>Upper triangular matrix:</strong></li>
+            <pre>
+            U = 
+            <table>
+                <tr><td>u<sub>11</sub></td><td>u<sub>12</sub></td><td>u<sub>13</sub></td></tr>
+                <tr><td>0</td><td>u<sub>22</sub></td><td>u<sub>23</sub></td></tr>
+                <tr><td>0</td><td>0</td><td>u<sub>33</sub></td></tr>
+            </table>
+            </pre>
+
+            <p>The determinant of an upper triangular matrix is simply the product of the diagonal elements:</p>
+            <pre>det(U) = u<sub>11</sub> * u<sub>22</sub> * u<sub>33</sub></pre>
+            </li>
+
+            <li><strong>Lower triangular matrix:</strong></li>
+            <pre>
+            L = 
+            <table>
+                <tr><td>l<sub>11</sub></td><td>0</td><td>0</td></tr>
+                <tr><td>l<sub>21</sub></td><td>l<sub>22</sub></td><td>0</td></tr>
+                <tr><td>l<sub>31</sub></td><td>l<sub>32</sub></td><td>l<sub>33</sub></td></tr>
+            </table>
+            </pre>
+
+            <p>The determinant of a lower triangular matrix is also the product of the diagonal elements:</p>
+            <pre>det(L) = l<sub>11</sub> * l<sub>22</sub> * l<sub>33</sub></pre>
+            </li>
+        </ul>
+
+        <h3>3.5 Properties of Determinants</h3>
+        <ul>
+            <li><strong>Det(A) = 0 implies that A is singular (non-invertible).</strong> If the determinant is zero, the matrix has no inverse, meaning its transformation squashes vectors into a lower dimension (e.g., a line or point).</li>
+            
+            <li><strong>Det(AB) = Det(A) * Det(B).</strong> The determinant of the product of two matrices is the product of their determinants.</li>
+
+            <li><strong>Det(A<sup>T</sup>) = Det(A).</strong> The determinant of a matrix is the same as the determinant of its transpose.</li>
+
+            <li><strong>Det(A<sup>-1</sup>) = 1 / Det(A).</strong> The determinant of the inverse of a matrix is the reciprocal of the determinant of the original matrix (assuming the matrix is invertible).</li>
+
+            <li><strong>Row operations:</strong> Swapping two rows of a matrix multiplies the determinant by -1, multiplying a row by a scalar multiplies the determinant by that scalar, and adding a multiple of one row to another does not change the determinant.</li>
+        </ul>
+
+        <h3>3.6 Geometric Interpretation of Determinants</h3>
+        <p>The determinant of a matrix represents the scaling factor of the transformation described by the matrix. For example, in \( \mathbb{R}^2 \), the absolute value of the determinant tells you how the area of a transformed shape is scaled.</p>
+        <p>- A determinant of 1 means the area (or volume) is preserved under the transformation.</p>
+        <p>- A determinant greater than 1 indicates that the transformation expands the area (or volume), while a determinant between 0 and 1 indicates a contraction.</p>
+        <p>- A determinant of 0 means the transformation squashes the space into a lower dimension (e.g., turning a 2D shape into a line).</p>
     </section>
+
+
 
     <!-- Matrix Properties and Theorems Section -->
     <section id="matrix-properties">
