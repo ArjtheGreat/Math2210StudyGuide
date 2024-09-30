@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Algebra Prelim Review</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Linear Algebra Prelim Study Guide - Eddy's Version</h1>
+        <h4 style="color: white">This focuses specifically on what Eddy said we should know <br/>
+            "Yea he said to study the problems with proofs like on the homework and really understand them <br/>
+            People don’t do that <br/>
+            They don’t learn how to think outside of just knowing proofs by applying them to problems" <br/>
+            -Daniel Khanin, interviewing Professor Ewdard Phineas Swartz
+        </h4>
+       
+        <!-- Main Navigation (Links to other pages) -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Core Concepts Overview</a></li>
+                <li><a href="eddysversion.html">Eddy's Version</a></li>
+                <li><a href="practiceproblems.html">Practice Problems</a></li>
+            </ul>
+        </nav>
+
+        <!-- Sub-Navigation (Links to sections within the current page) -->
+        <nav class="sub-nav">
+            <ul>
+                <li><a href="#systems">Systems of Equations</a></li>
+                <li><a href="#matrix-operations">Matrix Operations</a></li>
+                <li><a href="#matrix-inverses">Inverses</a></li>
+                <li><a href="#linear-transformations">Linear Transformations</a></li>
+                <li><a href="#matrix-determinants">Determinants</a></li>
+                <li><a href="#matrix-properties">Matrix Properties and Theorems</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- Systems of Linear Equations Section -->
+    <section id="systems">
+        <h2>Systems of Linear Equations</h2>
+
+        <h3>1.1 Row-Echelon and Reduced Row-Echelon Form (RREF)</h3>
+        <p><strong>Understanding the Concepts:</strong> When working with systems of linear equations, reducing a matrix to Row-Echelon Form (REF) or Reduced Row-Echelon Form (RREF) is essential. These forms allow us to see which variables are free and which are leading, helping us solve systems efficiently.</p>
+        <ul>
+            <li>REF helps identify the rank and gives us insights into how many leading variables (pivots) we have.</li>
+            <li>RREF makes it clear which solutions are possible (trivial vs. non-trivial).</li>
+        </ul>
+        <p><strong>Application:</strong> Understanding the difference between free and leading variables will help you find solutions faster, especially when dealing with underdetermined or overdetermined systems.</p>
+
+        <h3>1.2 Gaussian Elimination</h3>
+        <p><strong>Proof Application:</strong> Gaussian elimination is more than just a procedure—it allows you to prove why a system has solutions or why it doesn’t. In homework problems, you’ve seen that if a row in the augmented matrix has all zeros except for the right-most entry, the system is inconsistent.</p>
+
+        <h3>1.3 Homogeneous Systems</h3>
+        <p>Homogeneous systems always have the trivial solution (x = 0), but when there are free variables, they also have non-trivial solutions. This happens when the matrix has fewer pivots than columns, leading to an infinite number of solutions.</p>
+        <p><strong>Proof Concept:</strong> In class, you've proven that if the null space is non-trivial, the system has free variables. Practice applying this idea by showing how many free variables a system has, given its rank.</p>
+
+        <h3>1.4 Rank and Consistency</h3>
+        <p>Rank is the number of pivot columns, and it determines how "full" the matrix is. A system is consistent if it has at least one solution (i.e., the matrix is full rank).</p>
+        <p><strong>Proof Strategy:</strong> Apply the rank-nullity theorem to prove whether a system is consistent or inconsistent based on the rank of the matrix.</p>
+
+        <h3>1.5 Free and Leading Variables</h3>
+        <p><strong>Proof Tip:</strong> In your proofs, always explain why a matrix’s rank gives you insight into the number of free variables, and how this affects the solution set of a system. For example, a rank-deficient system implies free variables and multiple solutions.</p>
+    </section>
+
+    <!-- Matrix Operations Section -->
+    <section id="matrix-operations">
+        <h2>Matrix Operations</h2>
+
+        <h3>2.1 Matrix Addition and Scalar Multiplication</h3>
+        <p>These operations are basic, but understanding them helps when proving properties of matrices, such as commutativity and associativity.</p>
+
+        <h3>2.2 Matrix Multiplication</h3>
+        <p><strong>Understanding the Dot Product:</strong> Matrix multiplication involves the dot product of rows from one matrix with columns from another. Practice showing how each entry in the product matrix corresponds to the dot product of a row and a column.</p>
+        <p><strong>Application:</strong> You’ll often prove properties like associativity (i.e., (AB)C = A(BC)) in homework. To understand why this works, visualize the matrix multiplication process and how each entry depends on the dot product.</p>
+
+        <h3>2.3 Key Matrix Multiplication Properties</h3>
+        <p>In proofs, you’ll often use properties like commutativity, associativity, and distributivity. Be prepared to apply them when proving more complex theorems.</p>
+    </section>
+
+    <!-- Matrix Inverses Section -->
+    <section id="matrix-inverses">
+        <h2>Matrix Inverses</h2>
+
+        <h3>3.1 Inverse of a Matrix</h3>
+        <p>The inverse of a matrix A is another matrix A<sup>-1</sup> such that AA<sup>-1</sup> = I. In homework, you’ve worked through proofs that explain when a matrix is invertible and when it isn’t.</p>
+        <p><strong>Proof Insight:</strong> A matrix is invertible if its determinant is non-zero. Practice proving this by using cofactor expansion and determinant properties.</p>
+
+        <h3>3.2 Application in Proofs</h3>
+        <p>In solving systems, you’ve likely used the fact that if A is invertible, you can solve Ax = b using A<sup>-1</sup>. Be sure to prove why invertibility leads to unique solutions and how non-invertible matrices correspond to dependent systems.</p>
+    </section>
+
+    <!-- Linear Transformations Section -->
+    <section id="linear-transformations">
+        <h2>Linear Transformations</h2>
+
+        <h3>4.1 Understanding Linear Transformations</h3>
+        <p>Linear transformations are functions that preserve addition and scalar multiplication. This is a core concept in linear algebra because it allows us to understand how spaces are stretched, rotated, or squashed by matrices.</p>
+        <p><strong>Proof Tip:</strong> When proving something about linear transformations, make sure to show how the transformation preserves the two key properties (addition and scalar multiplication).</p>
+
+        <h3>4.2 Common Transformation Matrices</h3>
+        <p>Understand how transformations like rotations, reflections, and shearing can be represented by matrices. Be ready to prove that a certain matrix corresponds to a specific geometric transformation by applying the transformation to points or vectors.</p>
+    </section>
+
+    <!-- Matrix Determinants Section -->
+    <section id="matrix-determinants">
+        <h2>Matrix Determinants</h2>
+
+        <h3>5.1 Understanding Determinants</h3>
+        <p>Determinants give you insight into the properties of a matrix, such as whether it is invertible. Practice expanding determinants using cofactor expansion and proving why det(A) = 0 implies A is singular.</p>
+        <p><strong>Application in Proofs:</strong> Often, you will use determinant properties to show whether a matrix is invertible or to compute areas and volumes of transformed shapes.</p>
+    </section>
+
+    <!-- Matrix Properties and Theorems Section -->
+    <section id="matrix-properties">
+        <h2>Matrix Properties and Theorems</h2>
+
+        <h3>6.1 Key Theorems</h3>
+        <ul>
+            <li>Rank-Nullity Theorem: Rank(A) + Nullity(A) = n (number of columns of A).</li>
+            <li>Invertibility: If det(A) ≠ 0, then A is invertible.</li>
+            <li>Transpose: (AB)<sup>T</sup> = B<sup>T</sup>A<sup>T</sup></li>
+            <li>Matrix Powers: A<sup>n</sup> * A<sup>-n</sup> = I</li>
+        </ul>
+
+        <h3>6.2 Application to Proofs</h3>
+        <p>When solving homework problems, you’ll often need to rely on these theorems. Practice writing clear, step-by-step proofs using the Rank-Nullity Theorem or transpose properties to justify your answers.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Linear Algebra Prelim Review</p>
+    </footer>
+
+</body>
+</html>

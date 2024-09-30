@@ -25,27 +25,64 @@ header h1 {
 }
 
 /* Navigation Menu */
-nav ul {
+/* Main Navigation Styling */
+.main-nav {
+    background-color: #b31b1b; /* Cornell Red */
+    padding: 10px;
+    text-align: center;
+}
+
+.main-nav ul {
     list-style-type: none;
+    margin: 0;
     padding: 0;
 }
 
-nav ul li {
+.main-nav ul li {
     display: inline;
     margin: 0 20px;
 }
 
-nav ul li a {
-    color: #ffffff;
+.main-nav ul li a {
+    color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2em;
-    transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #f7b733;
+.main-nav ul li a:hover {
+    text-decoration: underline;
 }
+
+/* Sub-Navigation Styling */
+.sub-nav {
+    background-color: #f2f2f2; /* Light background for distinction */
+    padding: 8px;
+    text-align: center;
+    border-top: 2px solid #b31b1b; /* Red border for consistency */
+}
+
+.sub-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.sub-nav ul li a {
+    color: #b31b1b; /* Cornell Red */
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.sub-nav ul li a:hover {
+    text-decoration: underline;
+}
+
 
 /* Section Styling */
 section {
