@@ -165,6 +165,44 @@ section:hover {
     box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
 }
 
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.dropdown {
+    margin: 10px 0;
+}
+.dropdown-btn {
+    background-color: #b31b1b;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+.dropdown-content {
+    display: none;
+    padding: 10px;
+    margin: 0;
+    background-color: #f5f5f5;
+    border-left: 3px solid #b31b1b;
+}
+.dropdown-btn:focus + .dropdown-content {
+    display: block;
+}
+pre {
+    background-color: #eeeeee;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
+}
+
 /* Responsive Styling for Mobile */
 @media (max-width: 768px) {
     header h1 {

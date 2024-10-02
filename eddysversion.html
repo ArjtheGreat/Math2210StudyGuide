@@ -47,24 +47,24 @@
         <h3>1.1 Row-Echelon and Reduced Row-Echelon Form (RREF)</h3>
         <p><strong>Understanding the Concepts:</strong> When working with systems of linear equations, reducing a matrix to Row-Echelon Form (REF) or Reduced Row-Echelon Form (RREF) is essential. These forms allow us to see which variables are free and which are leading, helping us solve systems efficiently.</p>
         <ul>
-            <li>REF helps identify the rank and gives us insights into how many leading variables (pivots) we have.</li>
-            <li>RREF makes it clear which solutions are possible (trivial vs. non-trivial).</li>
+            <li>REF helps identify the rank (number of non-zero rows in RREF) and gives us insights into how many leading variables (pivots) we have.</li>
+            <li>RREF makes it clear which solutions are possible, gives direct solutions for variables. Use this to find the solution set.</li>
         </ul>
         <p><strong>Application:</strong> Understanding the difference between free and leading variables will help you find solutions faster, especially when dealing with underdetermined or overdetermined systems.</p>
 
         <h3>1.2 Gaussian Elimination</h3>
-        <p><strong>Proof Application:</strong> Gaussian elimination is more than just a procedure—it allows you to prove why a system has solutions or why it doesn’t. In homework problems, you’ve seen that if a row in the augmented matrix has all zeros except for the right-most entry, the system is inconsistent.</p>
+        <p><strong>Proof Application:</strong> Gaussian elimination is more than just a procedure—it allows you to prove if a system has no solutions, one unique solution, or infinitely many solutions. In homework problems, you’ve seen that if a row in the augmented matrix has all zeros except for the right-most entry, the system is inconsistent.</p>
 
         <h3>1.3 Homogeneous Systems</h3>
-        <p>Homogeneous systems always have the trivial solution (x = 0), but when there are free variables, they also have non-trivial solutions. This happens when the matrix has fewer pivots than columns, leading to an infinite number of solutions.</p>
-        <p><strong>Proof Concept:</strong> In class, you've proven that if the null space is non-trivial, the system has free variables. Practice applying this idea by showing how many free variables a system has, given its rank.</p>
+        <p>Homogeneous systems always have the trivial solution (x = 0), but when there are free variables in REF, they also have non-trivial solutions. This happens when the matrix has fewer pivots than columns, leading to an infinite number of solutions.</p>
+        <p><strong>Proof Concept:</strong> In class, you've proven that if the null space is non-trivial, the system has free variables. Practice applying this idea by showing how many free variables a system has, given its rank (remember, rank + nullity = n).</p>
 
         <h3>1.4 Rank and Consistency</h3>
-        <p>Rank is the number of pivot columns, and it determines how "full" the matrix is. A system is consistent if it has at least one solution (i.e., the matrix is full rank).</p>
-        <p><strong>Proof Strategy:</strong> Apply the rank-nullity theorem to prove whether a system is consistent or inconsistent based on the rank of the matrix.</p>
+        <p>Rank is the number of pivot columns (I like to say its the number of non-zero rows), and it determines how "full" the matrix is. A system is consistent if it has at least one solution (i.e., the matrix is full rank).</p>
+        <p><strong>Proof Strategy:</strong>Rank helps tell the difference between one unique solution and infinite solutions (not helpful for no solution, must go to REF to see that) Apply the rank-nullity theorem to prove how many solutions a matrix has based on the rank of the matrix.</p>
 
         <h3>1.5 Free and Leading Variables</h3>
-        <p><strong>Proof Tip:</strong> In your proofs, always explain why a matrix’s rank gives you insight into the number of free variables, and how this affects the solution set of a system. For example, a rank-deficient system implies free variables and multiple solutions.</p>
+        <p><strong>Proof Tip:</strong> In your proofs, always explain why a matrix’s rank gives you insight into the number of free variables, and how this affects the solution set of a system. For example, a system that doesn't have <em>rank = n</em> implies free variables and infinite solutions. </p>
     </section>
 
     <!-- Matrix Operations Section -->
@@ -75,7 +75,8 @@
         <p>These operations are basic, but understanding them helps when proving properties of matrices, such as commutativity and associativity.</p>
 
         <h3>2.2 Matrix Multiplication</h3>
-        <p><strong>Understanding the Dot Product:</strong> Matrix multiplication involves the dot product of rows from one matrix with columns from another. Practice showing how each entry in the product matrix corresponds to the dot product of a row and a column.</p>
+        <p><strong>Understanding the Dot Product:</strong> Matrix multiplication involves the dot product of rows from one matrix with columns from another. Practice showing how each entry in the product matrix corresponds to the dot product of a row and a column.
+        Remember: if C = AB, then the entry in Matrix C (Row X, Column Y) is the dot product of Row X of A and Column Y of B</p>
         <p><strong>Application:</strong> You’ll often prove properties like associativity (i.e., (AB)C = A(BC)) in homework. To understand why this works, visualize the matrix multiplication process and how each entry depends on the dot product.</p>
 
         <h3>2.3 Key Matrix Multiplication Properties</h3>
@@ -88,7 +89,7 @@
 
         <h3>3.1 Inverse of a Matrix</h3>
         <p>The inverse of a matrix A is another matrix A<sup>-1</sup> such that AA<sup>-1</sup> = I. In homework, you’ve worked through proofs that explain when a matrix is invertible and when it isn’t.</p>
-        <p><strong>Proof Insight:</strong> A matrix is invertible if its determinant is non-zero. Practice proving this by using cofactor expansion and determinant properties.</p>
+        <p><strong>Proof Insight:</strong> A matrix is invertible if its determinant is non-zero (we can use this method as Eddy has taught it in class!). Practice proving this by using cofactor expansion and determinant properties.</p>
 
         <h3>3.2 Application in Proofs</h3>
         <p>In solving systems, you’ve likely used the fact that if A is invertible, you can solve Ax = b using A<sup>-1</sup>. Be sure to prove why invertibility leads to unique solutions and how non-invertible matrices correspond to dependent systems.</p>

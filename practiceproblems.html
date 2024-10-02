@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Algebra Prelim Review</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Linear Algebra Cheat (Web)Sheet</h1>
+        <h3 style="color: white"> by Arjun Maitra </h3>
+
+       <!-- Main Navigation (Links to other pages) -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Core Concepts Overview</a></li>
+                <li><a href="eddysversion.html">Eddy's Version</a></li>
+                <li><a href="practiceproblems.html">Practice Problems</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Systems of Linear Equations</h2>
+
+        <div class="dropdown">
+            <button class="dropdown-btn">Problem 1: Gaussian Elimination</button>
+            <div class="dropdown-content">
+                <p>Solve the following system of equations using Gaussian Elimination:</p>
+                <pre>
+2x + 3y - z = 5
+x - 2y + 3z = 4
+3x + y + z = 10
+                </pre>
+                <p><strong>Hint:</strong> Reduce to Row-Echelon Form, then Reduced Row-Echelon Form.</p>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropdown-btn">Problem 2: Homogeneous Systems</button>
+            <div class="dropdown-content">
+                <p>Find the general solution for the following homogeneous system:</p>
+                <pre>
+x + 2y + 3z = 0
+2x + 5y + 6z = 0
+4x + 8y + 12z = 0
+                </pre>
+                <p><strong>Hint:</strong> Analyze for trivial and non-trivial solutions based on rank and free variables.</p>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropdown-btn">Problem 3: Rank and Consistency</button>
+            <div class="dropdown-content">
+                <p>Determine the rank and consistency of the following matrix:</p>
+                <pre>
+[1  2  3  7]
+[2  4  6  14]
+[3  6  9  21]
+                </pre>
+                <p><strong>Hint:</strong> Use Gaussian elimination to determine rank and check for consistency.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Matrix Operations</h2>
+
+        <div class="dropdown">
+            <button class="dropdown-btn">Problem 4: Matrix Addition</button>
+            <div class="dropdown-content">
+                <p>Perform the matrix addition for the following matrices:</p>
+                <pre>
+A = [1  2]
+    [3  4]
+
+B = [5  6]
+    [7  8]
+                </pre>
+                <p><strong>Hint:</strong> Simply add corresponding elements of both matrices.</p>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropdown-btn">Problem 5: Matrix Multiplication</button>
+            <div class="dropdown-content">
+                <p>Calculate the matrix product \( AB \):</p>
+                <pre>
+A = [1  2  1]
+    [0  1  2]
+
+B = [3  1]
+    [2  4]
+    [0  5]
+                </pre>
+                <p><strong>Hint:</strong> Row X, Column Y of C is the dot product of Row X of A and Column Y of B.</p>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropdown-btn">Problem 6: Scalar Multiplication</button>
+            <div class="dropdown-content">
+                <p>If \( k = 3 \), multiply matrix A by scalar k:</p>
+                <pre>
+A = [1  2  3]
+    [4  5  6]
+                </pre>
+                <p><strong>Hint:</strong> Multiply each element of matrix A by the scalar.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Matrix Inverses</h2>
+
+        <div class="dropdown">
+            <button class="dropdown-btn">Problem 7: Inverse of a 2x2 Matrix</button>
+            <div class="dropdown-content">
+                <p>Find the inverse of the following matrix (if it exists):</p>
+                <pre>
+A = [1  2]
+    [3  4]
+                </pre>
+                <p><strong>Hint:</strong> Use the formula for the inverse of a 2x2 matrix: \( A^{-1} = \frac{1}{\det(A)} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix} \)</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Linear Transformations</h2>
+
+        <div class="dropdown">
+            <button class="dropdown-btn">Problem 8: Rotation Matrix</button>
+            <div class="dropdown-content">
+                <p>Apply a rotation of \( \theta = 90^\circ \) counterclockwise to the vector \( \begin{bmatrix} 1 \\ 0 \end{bmatrix} \).</p>
+                <pre>
+Rotation Matrix: 
+[cos(θ)  -sin(θ)]
+[sin(θ)   cos(θ)]
+                </pre>
+                <p><strong>Hint:</strong> Use the rotation matrix with \( \theta = 90^\circ \) and calculate the resulting vector.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Matrix Determinants</h2>
+
+        <div class="dropdown">
+            <button class="dropdown-btn">Problem 9: Determinant of a 3x3 Matrix</button>
+            <div class="dropdown-content">
+                <p>Find the determinant of the following matrix using cofactor expansion:</p>
+                <pre>
+A = [1  2  3]
+    [4  5  6]
+    [7  8  9]
+                </pre>
+                <p><strong>Hint:</strong> Expand along the first row and use the cofactor method to compute the determinant.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -32,14 +32,13 @@
                 <li><a href="#matrix-properties">Matrix Properties and Theorems</a></li>
             </ul>
         </nav>
-
     </header>
 
     <!-- Systems of Linear Equations Section -->
     <section id="systems">
         <h2>Systems of Linear Equations</h2>
 
-        <h3>1.1 Row-Echelon and Reduced Row-Echelon Form (RREF)</h3>
+        <h3>Row-Echelon and Reduced Row-Echelon Form (RREF)</h3>
         <p><strong>Row-Echelon Form (REF):</strong> A matrix is in REF if:</p>
         <ul>
             <li>All non-zero rows are above any rows of all zeros.</li>
@@ -116,18 +115,18 @@
     <section id="matrix-operations">
         <h2>Matrix Operations</h2>
 
-        <h3>2.1 Matrix Addition and Scalar Multiplication</h3>
+        <h3>Matrix Addition and Scalar Multiplication</h3>
         <p><strong>Matrix Addition:</strong> For matrices A and B of the same dimensions:</p>
         <pre>A + B = [a<sub>ij</sub> + b<sub>ij</sub>]</pre>
 
-        <h3>2.2 Matrix Multiplication</h3>
+        <h3>Matrix Multiplication</h3>
         <p><strong>Matrix Multiplication:</strong> The product of matrices A and B is:</p>
         <pre>(AB)<sub>ij</sub> = Σ A<sub>ik</sub> B<sub>kj</sub></pre>
-        <pre>Basically: if C = AB, then Row X, Column Y of C is the dot product of Row X of A and Column Y of B</pre>
+        <pre>Basically: if C = AB, then the entry in Matrix C (Row X, Column Y) is the dot product of Row X of A and Column Y of B</pre>
 
         <p><strong>Multiplication of a Matrix by a Vector:</strong> Can be understood as a linear combination of the matrix's columns.</p>
 
-        <h3>2.3 Matrix Multiplication Rules</h3>
+        <h3>Matrix Multiplication Rules</h3>
         <p>Matrix multiplication is associative:</p>
         <pre>ABC = (AB)C = A(BC)</pre>
 
@@ -140,7 +139,7 @@
     <section id="matrix-inverses">
         <h2>Matrix Inverses</h2>
 
-        <h3>3.1 Matrix Inverses</h3>
+        <h3>Matrix Inverses</h3>
         <p><strong>Inverse of a Matrix:</strong> A matrix A has an inverse A<sup>-1</sup> if:</p>
         <pre>AA<sup>-1</sup> = A<sup>-1</sup>A = I</pre>
 
@@ -159,14 +158,14 @@
     <section id="linear-transformations">
         <h2>Linear Transformations</h2>
     
-        <h3>4.1 Definition of Linear Transformations</h3>
+        <h3>Definition of Linear Transformations</h3>
         <p>A transformation T: R<sup>n</sup> → R<sup>m</sup> is linear if:</p>
         <ul>
             <li>T(u + v) = T(u) + T(v)</li>
             <li>T(cu) = cT(u)</li>
         </ul>
     
-        <h3>4.2 Common Transformation Matrices in R<sup>2</sup></h3>
+        <h3>Common Transformation Matrices in R<sup>2</sup></h3>
         <p>Here are some common transformation matrices for R<sup>2</sup> and what they represent:</p>
     
         <ul>
@@ -259,7 +258,7 @@
             </li>
         </ul>
     
-        <h3>4.3 Composition of Matrix Transformations</h3>
+        <h3>Composition of Matrix Transformations</h3>
         <p>Matrix transformations can be composed by matrix multiplication. For example, applying two transformations T<sub>1</sub> and T<sub>2</sub> in sequence to a vector v is expressed as:</p>
         <pre>T₁(T₂(v)) = (T₁T₂)(v)</pre>
         <p>However, it is important to note that **matrix multiplication is not commutative**, meaning the order of multiplication matters. When you compose two transformations, the order in which they are applied reverses the order of multiplication.</p>
@@ -273,11 +272,11 @@
     <section id="matrix-determinants">
         <h2>Matrix Determinants</h2>
 
-        <h3>3.1 Definition of a Matrix Determinant</h3>
+        <h3>Definition of a Matrix Determinant</h3>
         <p>The determinant of a square matrix is a scalar value that can be computed from the elements of the matrix and encodes certain properties of the matrix. The determinant helps determine whether a matrix is invertible, its volume-scaling factor in transformations, and other characteristics.</p>
         <p>The determinant of matrix A is written as det(A) or |A|.</p>
 
-        <h3>3.2 Determinants of 2x2 and 3x3 Matrices</h3>
+        <h3>Determinants of 2x2 and 3x3 Matrices</h3>
         
         <ul>
             <li><strong>Determinant of a 2x2 matrix:</strong></li>
@@ -296,7 +295,7 @@
             </p>
         </ul>
 
-        <h3>3.3 Cofactor Method for Determinants</h3>
+        <h3>Cofactor Method for Determinants</h3>
         <p>The cofactor method (or cofactor expansion) is used to calculate the determinant of larger matrices (3x3 or higher). Here's how it works for a 3x3 matrix:</p>
         <pre>
         A = 
@@ -350,7 +349,7 @@
         </pre>
         <p>This is the cofactor expansion method. You can expand along any row or column, but the result will be the same.</p>
 
-        <h3>3.4 Determinants of Upper and Lower Triangular Matrices</h3>
+        <h3>Determinants of Upper and Lower Triangular Matrices</h3>
         <p>A matrix is upper triangular if all the elements below the main diagonal are zero, and lower triangular if all the elements above the main diagonal are zero.</p>
 
         <ul>
@@ -383,7 +382,7 @@
             </li>
         </ul>
 
-        <h3>3.5 Properties of Determinants</h3>
+        <h3>Properties of Determinants</h3>
         <ul>
             <li><strong>Det(A) = 0 implies that A is singular (non-invertible).</strong> If the determinant is zero, the matrix has no inverse, meaning its transformation squashes vectors into a lower dimension (e.g., a line or point).</li>
             
@@ -409,7 +408,7 @@
     <section id="matrix-properties">
         <h2>Matrix Properties and Theorems</h2>
 
-        <h3>5.1 Key Matrix Theorems</h3>
+        <h3>Key Matrix Theorems</h3>
         <ul>
             <li>(AB)<sup>T</sup> = B<sup>T</sup>A<sup>T</sup></li>
             <li>(A<sup>T</sup>)<sup>T</sup> = A</li>
@@ -417,7 +416,7 @@
             <li>(A + B)<sup>T</sup> = A<sup>T</sup> + B<sup>T</sup></li>
         </ul>
 
-        <h3>5.2 Matrix Symmetry and Properties</h3>
+        <h3>Matrix Symmetry and Properties</h3>
         <ul>
             <li>A matrix is symmetric if A<sup>T</sup> = A</li>
             <li>If Matrix A is symmetric then: (A<sup>-1</sup>)<sup>T</sup> = A<sup>-1</sup></li>
